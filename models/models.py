@@ -12,7 +12,8 @@ class Source(str, Enum):
 class DocumentMetadata(BaseModel):
     source: Optional[Source] = None
     source_id: Optional[str] = None
-    url: Optional[str] = None
+    book: Optional[str] = None
+    chapter: Optional[str] = None
     created_at: Optional[str] = None
     author: Optional[str] = None
 
