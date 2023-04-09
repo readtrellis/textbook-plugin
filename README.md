@@ -1,3 +1,9 @@
+# Textbook plugin fork
+
+For readme of the fork see ./textbook-plugin.md
+
+---
+
 # ChatGPT Retrieval Plugin
 
 > **Join the [ChatGPT plugins waitlist here](https://openai.com/waitlist/plugins)!**
