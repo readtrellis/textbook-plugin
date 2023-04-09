@@ -31,10 +31,17 @@ return await self._query(queries_with_embeddings)
 
 ## Features
 
-- edit `.well-known/openapi.yaml`
-- edit `.well-known/ai-plugin.json`
-- add book as a document format
-- add index of books
+P1
+- /query-textbook
+    - edit `.well-known/openapi.yaml`
+    - edit `.well-known/ai-plugin.json`
+    - add book as a document format
+    - where to add available textbooks with name and summary?
+
+P2
+- /chapters-for-textbook
+- /available-textbooks-for-topic - add topic <-> books mapping?  k, is this is a hardcoded or ML feature? hardcoded would be "give me textbooks for a given topic"
+- book object metadata - Book Content Description Chatpers ... - can work on this after looking what plugins are around
 
 ## Use Cases
 
