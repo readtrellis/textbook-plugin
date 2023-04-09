@@ -9,7 +9,25 @@ Personalisation
 
 - how does the API look like? - .well-known/openapi.yaml
 - how to change `extract_metadata_from_document` - no that looks like just a utility
-- how is query APi implemented - 
+
+### How is query API implemented 
+
+
+![]("./textbook-plugin-design.png")
+
+```datastore.query
+query_texts = [query.query for query in queries]
+query_embeddings = get_embeddings(query_texts)
+# hydrate the queries with embeddings
+queries_with_embeddings = [
+    QueryWithEmbedding(**query.dict(), embedding=embedding)
+    for query, embedding in zip(queries, query_embeddings)
+]
+return await self._query(queries_with_embeddings)
+```
+
+- where is the topk done? - somewhere in pinecone
+- description: Accepts search query objects array each with query and optional filter. Break down complex questions into sub-questions. Refine results by criteria, e.g. time / source, don't do this often. Split queries if ResponseTooLargeError occurs. - this are the instructions on how to use the query, the instructions are not for humans but for LLMs!
 
 ## Features
 
